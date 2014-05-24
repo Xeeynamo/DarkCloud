@@ -134,7 +134,7 @@ void CreateSubDirs(const char* path)
 // Game specific
 
 // file entry of the game
-typedef struct LBA
+typedef struct HD2
 {
 	// position on current file where the file name is found
 	u32 pName;
@@ -149,12 +149,12 @@ typedef struct LBA
 	u32 blockPos;
 	// how blocks the file fills
 	u32 blockSize;
-} LBA;
+} HD2;
 
 //! \brief get a pointer to the file name of specified LBA entry
 //! \param[in] lba to check
 //! \param[in] data in memory of the entire .HD2 file
-const char* GetLbaName(const LBA* lba, const void* data)
+const char* GetLbaName(const HD2* lba, const void* data)
 {
 	assert(lba != NULL);
 	assert(data != NULL);
@@ -165,14 +165,14 @@ const char* GetLbaName(const LBA* lba, const void* data)
 //! \param[in] lba to check
 //! \return 1 if it's empty, 0 if it isn't
 //! \details this is usually used to check the EOF of an HD2 file
-int IsLbaEmtpy(const LBA* lba)
+int IsLbaEmtpy(const HD2* lba)
 {
 	assert(lba != NULL);
 	return lba->pos == 0 && lba->size == 0 &&
 		lba->blockPos == 0 && lba->blockSize == 0;
 }
 
-int Extract(LBA* lba, const void* lbadata, FILE* fDat, const char* szExport)
+int Extract(const HD2* lba, const void* lbadata, FILE* fDat, const char* szExport)
 {
 	FILE* fOut;
 	char szFileName[MAX_PATH];
@@ -208,7 +208,7 @@ int Unpack(const char* szFileDat, const char* szFileHd2, const char* szExport)
 	FILE* fHd2;
 	int nHd2Lenght;
 	void* pHd2;
-	LBA* lba;
+	HD2* lba;
 
 	fDat = fopen(szFileDat, "rb");
 	if (fDat == NULL)
@@ -230,7 +230,7 @@ int Unpack(const char* szFileDat, const char* szFileHd2, const char* szExport)
 	fread(pHd2, 1, nHd2Lenght, fHd2);
 	fclose(fHd2);
 
-	lba = (LBA*)pHd2;
+	lba = (HD2*)pHd2;
 	while (IsLbaEmtpy(lba) == 0)
 	{
 		Extract(lba, pHd2, fDat, szExport);
