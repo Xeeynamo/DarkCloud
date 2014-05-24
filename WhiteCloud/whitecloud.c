@@ -237,7 +237,7 @@ int Unpack(const char* szFileDat, const char* szFileHd2, const char* szExport)
 		lba++;
 	}
 
-	free(fHd2);
+	free(pHd2);
 	fclose(fDat);
 	return 0;
 }
