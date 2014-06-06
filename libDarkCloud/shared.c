@@ -18,7 +18,7 @@
 
 #include "shared.h"
 
-inline size_t _GetExtensionPosition(const char* str)
+size_t _GetExtensionPosition(const char* str)
 {
 	const char* tmp = str + strlen(str);
 	while (tmp > str)
@@ -39,7 +39,7 @@ int CheckExtension(const char* str, const char* ext)
 
 void GetFilenameWithoutExt(char* dst, size_t len, const char* src)
 {
-	int extPos, srcLen;
+	size_t extPos, srcLen;
 	extPos = _GetExtensionPosition(src);
 	srcLen = strlen(src);
 	if (srcLen - extPos <= len)

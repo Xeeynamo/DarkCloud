@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// hd2.h
+// hd3.h
 // Part of LightCloud, HD2 format for Dark Cloud's (TM) PS2 game
 // Copyright(C) 2014  Luciano Ciccariello (Xeeynamo)
 // 
@@ -18,50 +18,42 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110 - 1301, USA.
 
 #pragma once
-#include "shared.h"
+#include "hd2.h"
 
-// HD2 file entry
-typedef struct HD2
+// HD3 file entry
+typedef struct HD3
 {
 	// position on current file where the file name is found
 	u32 pName;
-	u32 dummy1;
-	u32 dummy2;
-	u32 dummy3;
-	// position of file into .DAT (can't use blockPos * 0x800? *facepalm*)
-	u32 pos;
 	// real size of the file
 	u32 size;
 	// block position (ISO aligned) of file
 	u32 blockPos;
 	// how blocks the file fills
 	u32 blockSize;
-} HD2;
+} HD3;
 
 //! \brief get a pointer to the file name of specified LBA entry
 //! \param[in] lba to check
-//! \param[in] data in memory of the entire .HD2 file
-const char* Hd2GetLbaName(const HD2* lba, const void* data);
+//! \param[in] data in memory of the entire .HD3 file
+const char* Hd3GetLbaName(const HD3* lba, const void* data);
 
 //! \brief check if the specified LBA entry doesn't reefer to any real file
 //! \param[in] lba to check
 //! \return 1 if it's empty, 0 if it isn't
 //! \details this is usually used to check the EOF of an HD2 file
-int Hd2IsLbaEmtpy(const HD2* lba);
+int Hd3IsLbaEmtpy(const HD3* lba);
 
-//! \brief repack an HD2 file
+//! \brief repack an HD3 file
 //! \param[in] szFileDat file name of the .DAT file to create
-//! \param[in] szFileHd2 file name of the original .HD2 file
+//! \param[in] szFileHd3 file name of the original .HD3 file
 //! \param[in] szImport folder where the files are located
-//! \return 0 is positive, -3 szFileHd2 not opened, -2 szFileDat not created
-int Hd2Unpack(const char* szFileDat, const char* szFileHd2, const char* szImport);
+//! \return 0 is positive, -3 szFileHd3 not opened, -2 szFileDat not created
+int Hd3Unpack(const char* szFileDat, const char* szFileHd3, const char* szImport);
 
-//! \brief repack an HD2 file
+//! \brief repack an HD3 file
 //! \param[in] szFileDat file name of the .DAT file to create
-//! \param[in] szFileHd2 file name of the original .HD2 file
+//! \param[in] szFileHd3 file name of the original .HD3 file
 //! \param[in] szImport folder where the files are located
-//! \return 0 is positive, -3 szFileHd2 not opened, -2 szFileDat not created
-int Hd2Repack(const char* szFileDat, const char* szFileHd2, const char* szImport);
-
-int Hd2ReinsertFile(HD2* lba, const void* lbadata, FILE* fDat, const char* szImport);
-int Hd2ExtractFile(const HD2* lba, const void* lbadata, FILE* fDat, const char* szExport);
+//! \return 0 is positive, -3 szFileHd3 not opened, -2 szFileDat not created
+int Hd3Repack(const char* szFileDat, const char* szFileHd3, const char* szImport);

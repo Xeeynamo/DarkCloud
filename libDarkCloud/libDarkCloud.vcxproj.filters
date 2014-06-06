@@ -3,9 +3,11 @@
   <ItemGroup>
     <ClCompile Include="hd2.c" />
     <ClCompile Include="shared.c" />
+    <ClCompile Include="hd3.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hd2.h" />
     <ClInclude Include="shared.h" />
+    <ClInclude Include="hd3.h" />
   </ItemGroup>
 </Project>

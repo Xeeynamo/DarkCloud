@@ -32,7 +32,6 @@ int Hd2IsLbaEmtpy(const HD2* lba)
 		lba->blockPos == 0 && lba->blockSize == 0;
 }
 
-
 int Hd2ExtractFile(const HD2* lba, const void* lbadata, FILE* fDat, const char* szExport)
 {
 	FILE* fOut;
@@ -44,7 +43,7 @@ int Hd2ExtractFile(const HD2* lba, const void* lbadata, FILE* fDat, const char* 
 	assert(fDat != NULL);
 	assert(szExport != NULL);
 
-	lbaFileName = GetLbaName(lba, lbadata);
+	lbaFileName = Hd2GetLbaName(lba, lbadata);
 	strcpy(szFileName, szExport);
 	strcat(szFileName, lbaFileName);
 	CreateSubDirs(szFileName);
@@ -128,7 +127,7 @@ int Hd2Unpack(const char* szFileDat, const char* szFileHd2, const char* szExport
 	fclose(fHd2);
 
 	lba = (HD2*)pHd2;
-	while (IsLbaEmtpy(lba) == 0)
+	while (Hd2IsLbaEmtpy(lba) == 0)
 	{
 		Hd2ExtractFile(lba, pHd2, fDat, szExport);
 		lba++;

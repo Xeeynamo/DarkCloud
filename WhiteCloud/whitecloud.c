@@ -18,27 +18,43 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110 - 1301, USA.
 
 #include "../libDarkCloud/hd2.h"
+#include "../libDarkCloud/hd3.h"
 
 int main(int argc, char *argv[])
 {
 	printf("White Cloud\n"
 		"Developed by Luciano Ciccariello (Xeeynamo)\n\n");
 
-	if (argc >= 3)
+	if (argc == 3)
 	{
 		int hd2Pos;
+		int hd3Pos;
 		int datPos;
 
 		hd2Pos = CheckExtension(argv[1], ".HD2") == 0 ? 1 :
 			CheckExtension(argv[2], ".HD2") == 0 ? 2 : 0;
+		hd3Pos = CheckExtension(argv[1], ".HD3") == 0 ? 1 :
+			CheckExtension(argv[2], ".HD3") == 0 ? 2 : 0;
 		datPos = CheckExtension(argv[1], ".DAT") == 0 ? 1 :
 			CheckExtension(argv[2], ".DAT") == 0 ? 2 : 0;
 
-		if (hd2Pos != 0 && datPos != 0 && hd2Pos != datPos)
+		if (hd3Pos != 0)
 		{
-			char exportDir[MAX_PATH];
-			GetFilenameWithoutExt(exportDir, sizeof(exportDir), argv[hd2Pos]);
-			return Hd2Unpack(argv[datPos], argv[hd2Pos], exportDir);
+			if (hd3Pos != 0 && datPos != 0 && hd3Pos != datPos)
+			{
+				char exportDir[MAX_PATH];
+				GetFilenameWithoutExt(exportDir, sizeof(exportDir), argv[hd3Pos]);
+				return Hd3Unpack(argv[datPos], argv[hd2Pos], exportDir);
+			}
+		}
+		else
+		{
+			if (hd2Pos != 0 && datPos != 0 && hd2Pos != datPos)
+			{
+				char exportDir[MAX_PATH];
+				GetFilenameWithoutExt(exportDir, sizeof(exportDir), argv[hd2Pos]);
+				return Hd2Unpack(argv[datPos], argv[hd2Pos], exportDir);
+			}
 		}
 	}
 
