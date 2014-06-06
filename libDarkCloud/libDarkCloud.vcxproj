@@ -11,18 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B6FA5715-82CB-4F66-AC9F-84A6CD92C4D2}</ProjectGuid>
-    <RootNamespace>LightCloud</RootNamespace>
+    <ProjectGuid>{CADD8A17-8230-491E-9A16-DE4EB1F06C93}</ProjectGuid>
+    <RootNamespace>libDarkCloud</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -66,12 +66,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lightcloud.c" />
+    <ClCompile Include="hd2.c" />
+    <ClCompile Include="shared.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libDarkCloud\libDarkCloud.vcxproj">
-      <Project>{cadd8a17-8230-491e-9a16-de4eb1f06c93}</Project>
-    </ProjectReference>
+    <ClInclude Include="hd2.h" />
+    <ClInclude Include="shared.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

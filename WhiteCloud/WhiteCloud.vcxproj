@@ -68,6 +68,11 @@
   <ItemGroup>
     <ClCompile Include="whitecloud.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libDarkCloud\libDarkCloud.vcxproj">
+      <Project>{cadd8a17-8230-491e-9a16-de4eb1f06c93}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

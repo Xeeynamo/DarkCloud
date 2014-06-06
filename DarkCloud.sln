@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WhiteCloud", "WhiteCloud\Wh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LightCloud", "LightCloud\LightCloud.vcxproj", "{B6FA5715-82CB-4F66-AC9F-84A6CD92C4D2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libDarkCloud", "libDarkCloud\libDarkCloud.vcxproj", "{CADD8A17-8230-491E-9A16-DE4EB1F06C93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{B6FA5715-82CB-4F66-AC9F-84A6CD92C4D2}.Debug|Win32.Build.0 = Debug|Win32
 		{B6FA5715-82CB-4F66-AC9F-84A6CD92C4D2}.Release|Win32.ActiveCfg = Release|Win32
 		{B6FA5715-82CB-4F66-AC9F-84A6CD92C4D2}.Release|Win32.Build.0 = Release|Win32
+		{CADD8A17-8230-491E-9A16-DE4EB1F06C93}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CADD8A17-8230-491E-9A16-DE4EB1F06C93}.Debug|Win32.Build.0 = Debug|Win32
+		{CADD8A17-8230-491E-9A16-DE4EB1F06C93}.Release|Win32.ActiveCfg = Release|Win32
+		{CADD8A17-8230-491E-9A16-DE4EB1F06C93}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
