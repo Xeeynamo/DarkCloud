@@ -34,7 +34,7 @@ int CheckExtension(const char* str, const char* ext)
 	int extPos = _GetExtensionPosition(str);
 	if (extPos == 0)
 		return -1;
-	return strcmp(str + extPos + 1, ext);
+	return _strcmpi(str + extPos, ext);
 }
 
 void GetFilenameWithoutExt(char* dst, size_t len, const char* src)
@@ -44,7 +44,7 @@ void GetFilenameWithoutExt(char* dst, size_t len, const char* src)
 	srcLen = strlen(src);
 	if (srcLen - extPos <= len)
 	{
-		memcpy(dst, src, srcLen - extPos);
+		memcpy(dst, src, srcLen - extPos + 1);
 		dst[extPos] = '\0';
 	}
 	else

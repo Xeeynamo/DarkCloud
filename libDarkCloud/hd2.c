@@ -44,8 +44,7 @@ int Hd2ExtractFile(const HD2* lba, const void* lbadata, FILE* fDat, const char* 
 	assert(szExport != NULL);
 
 	lbaFileName = Hd2GetLbaName(lba, lbadata);
-	strcpy(szFileName, szExport);
-	strcat(szFileName, lbaFileName);
+	sprintf(szFileName, "%s/%s", szExport, lbaFileName);
 	CreateSubDirs(szFileName);
 	fOut = fopen(szFileName, "wb");
 	if (fOut == NULL)

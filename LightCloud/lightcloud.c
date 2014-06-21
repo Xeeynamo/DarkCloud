@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 			{
 				char exportDir[MAX_PATH];
 				GetFilenameWithoutExt(exportDir, sizeof(exportDir), argv[hd3Pos]);
-				return Hd3Repack(argv[datPos], argv[hd2Pos], exportDir);
+				return Hd3Repack(argv[datPos], argv[hd3Pos], exportDir);
 			}
 		}
 		else

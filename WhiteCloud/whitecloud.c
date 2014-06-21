@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 			{
 				char exportDir[MAX_PATH];
 				GetFilenameWithoutExt(exportDir, sizeof(exportDir), argv[hd3Pos]);
-				return Hd3Unpack(argv[datPos], argv[hd2Pos], exportDir);
+				return Hd3Unpack(argv[datPos], argv[hd3Pos], exportDir);
 			}
 		}
 		else
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 	}
 
 	printf("Usage:"
-		"\twhitecloud <data.dat> <data.hd2>\n"
-		"\twhitecloud <data.hd2> <data.dat>\n");
+		"\twhitecloud <data.dat> (<data.hd3> | <data.hd2)\n"
+		"\twhitecloud (<data.hd3> | <data.hd2) <data.dat>\n");
 	return 1;
 }
