@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////
 // hd3.h
 // Part of LightCloud, HD2 format for Dark Cloud's (TM) PS2 game
-// Copyright(C) 2014  Luciano Ciccariello (Xeeynamo)
+// Copyright(C) 2016  Luciano Ciccariello (Xeeynamo)
 // 
 // This program is free software; you can redistribute it and / or
 // modify it under the terms of the GNU General Public License

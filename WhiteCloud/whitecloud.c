@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////
 // White Cloud
 // Dark Cloud's (TM) .HD2/DAT unpacker
-// Copyright(C) 2014  Luciano Ciccariello (Xeeynamo)
+// Copyright(C) 2016  Luciano Ciccariello (Xeeynamo)
 // 
 // This program is free software; you can redistribute it and / or
 // modify it under the terms of the GNU General Public License
@@ -22,7 +22,7 @@
 
 int main(int argc, char *argv[])
 {
-	printf("White Cloud\n"
+	printf("White Cloud - Dark Cloud's HD2/HD3 unpacker\n"
 		"Developed by Luciano Ciccariello (Xeeynamo)\n\n");
 
 	if (argc == 3)

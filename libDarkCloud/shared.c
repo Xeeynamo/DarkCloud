@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 // shared.c
-// Copyright(C) 2014  Luciano Ciccariello (Xeeynamo)
+// Copyright(C) 2016  Luciano Ciccariello (Xeeynamo)
 // 
 // This program is free software; you can redistribute it and / or
 // modify it under the terms of the GNU General Public License
@@ -18,29 +18,16 @@
 
 #include "shared.h"
 
-size_t _GetExtensionPosition(const char* str)
-{
-	const char* tmp = str + strlen(str);
-	while (tmp > str)
-		if (*tmp == '.')
-			return tmp - str;
-		else
-			tmp--;
-	return 0;
-}
-
 int CheckExtension(const char* str, const char* ext)
 {
-	int extPos = _GetExtensionPosition(str);
-	if (extPos == 0)
-		return -1;
-	return _strcmpi(str + extPos, ext);
+	const char *strExt = strrchr(str, '.');
+	return strExt ? _strcmpi(strExt, ext) : -1;
 }
 
 void GetFilenameWithoutExt(char* dst, size_t len, const char* src)
 {
 	size_t extPos, srcLen;
-	extPos = _GetExtensionPosition(src);
+	extPos = strrchr(src, '.') - src;
 	srcLen = strlen(src);
 	if (srcLen - extPos <= len)
 	{

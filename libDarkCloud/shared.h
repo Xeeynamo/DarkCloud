@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 // shared.h
-// Copyright(C) 2014  Luciano Ciccariello (Xeeynamo)
+// Copyright(C) 2016  Luciano Ciccariello (Xeeynamo)
 // 
 // This program is free software; you can redistribute it and / or
 // modify it under the terms of the GNU General Public License

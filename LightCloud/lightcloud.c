@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////
 // Light Cloud
 // Dark Cloud's (TM) .HD2&3/DAT repacker
-// Copyright(C) 2014  Luciano Ciccariello (Xeeynamo)
+// Copyright(C) 2016  Luciano Ciccariello (Xeeynamo)
 // 
 // This program is free software; you can redistribute it and / or
 // modify it under the terms of the GNU General Public License
@@ -22,7 +22,7 @@
 
 int main(int argc, char *argv[])
 {
-	printf("Light Cloud\n"
+	printf("Light Cloud - Dark Cloud's HD2/HD3 packer\n"
 		"Developed by Luciano Ciccariello (Xeeynamo)\n\n");
 
 	if (argc == 3)
