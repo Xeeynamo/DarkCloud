@@ -31,7 +31,7 @@ void GetFilenameWithoutExt(char* dst, size_t len, const char* src)
 	srcLen = strlen(src);
 	if (srcLen - extPos <= len)
 	{
-		memcpy(dst, src, srcLen - extPos + 1);
+		memcpy(dst, src, extPos);
 		dst[extPos] = '\0';
 	}
 	else
